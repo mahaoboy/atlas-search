@@ -1,0 +1,24 @@
+#requireResource("confluence.web.resources:jquery")
+#requireResource("com.plugin.search.ResultRender:ResultRender-resources")
+<html>
+  <head>
+    <title>Search For Thumbnail</title>
+    <meta name="decorator" content="atl.general">
+  </head>
+  <body>
+    <form id="admin" class="aui" method="post" action="/plugins/servlet/searchresult">
+        <div class="field-group">
+             <label for="content">Search Content:</label>
+             <input type="text" id="searchcontent" name="searchcontent" class="text" value="
+             #if($searchcontent)
+             $searchcontent
+             #end">
+        </div>
+        <div class="field-group">
+            <input type="submit" value="Search" class="button">
+        </div>
+    </form>
+    <div id="bodycontent" />
+    
+  </body>
+</html>
