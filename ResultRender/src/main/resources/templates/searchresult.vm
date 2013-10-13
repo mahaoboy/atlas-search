@@ -11,6 +11,8 @@
         <div class="field-group">
              <label for="content">Search Content:</label>
              <input type="text" id="searchcontent" name="searchcontent" class="text" value="#if($searchcontent)$searchcontent#end">
+             <label for="content">Space Key:</label>
+             <input type="text" id="spacekey" name="spacekey" class="text" value="#if($spacekey)$spacekey#end">
              <input type="submit" value="Search" class="button">
         </div>
     </form>
