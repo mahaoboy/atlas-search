@@ -25,7 +25,7 @@
   <component-import key="velocity-renderer" interface="com.atlassian.templaterenderer.TemplateRenderer" />
   <template-context-item key="applicationPropertiesContextItem" component-ref="applicationProperties"
 context-key="applicationProperties" name="Application Properties Context Item"/> 
-  <servlet name="Search Result" i18n-name-key="search-result.name" key="search-result" class="com.plugin.search.SearchResult">
+  <servlet name="Search Result" i18n-name-key="search-result.name" key="search-result" class="com.plugin.search.SearchResultExtender">
     <description key="search-result.description">The Search Result Plugin</description>
     <url-pattern>/searchresult</url-pattern>
   </servlet>

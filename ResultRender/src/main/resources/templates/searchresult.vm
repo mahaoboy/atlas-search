@@ -11,12 +11,26 @@
         <div class="field-group">
              <label for="content">Search Content:</label>
              <input type="text" id="searchcontent" name="searchcontent" class="text" value="#if($searchcontent)$searchcontent#end">
+         </div>
+         <div class="field-group">
              <label for="content">Space Key:</label>
              <input type="text" id="spacekey" name="spacekey" class="text" value="#if($spacekey)$spacekey#end">
+        </div>
+        <div class="field-group">
              <input type="submit" value="Search" class="button">
         </div>
     </form>
-    <div id="bodycontent" />
+    
+    <div id="bodycontent" >
+    
+    #foreach ($task in $searchresultcontainer)
+    <ul>
+    <li>$task.getDisplayTitle()</li>
+    <li>$task.getContent()</li>
+    </ul>
+    #end
+    
+    </div>
     
   </body>
 </html>

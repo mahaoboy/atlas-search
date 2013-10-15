@@ -13,6 +13,12 @@
     <description>This is the com.plugin.search:ResultRender plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
+    	<dependency>
+		  <groupId>com.atlassian.confluence</groupId>
+		  <artifactId>atlassian-confluence-pageobjects</artifactId>
+		  <version>${confluence.version}</version>
+		  <scope>provided</scope>
+		</dependency>
    		<dependency>
 		  <groupId>com.atlassian.sal</groupId>
 		  <artifactId>sal-api</artifactId>
