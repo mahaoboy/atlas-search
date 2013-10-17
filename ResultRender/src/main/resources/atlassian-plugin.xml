@@ -11,7 +11,7 @@
   <!-- add our i18n resource -->
   <resource type="i18n" name="i18n" location="ResultRender"/>
   <!-- add our web resources -->
-  <web-resource key="ResultRender-resources" name="ResultRender Web Resources">
+  <web-resource key="resultrender-resources" name="ResultRender Web Resources">
     <dependency>com.atlassian.auiplugin:ajs</dependency>
     <resource type="download" name="ResultRender.css" location="/css/ResultRender.css"/>
     <resource type="download" name="ResultRender.js" location="/js/ResultRender.js"/>

@@ -1,10 +1,10 @@
-#requireResource("confluence.web.resources:jquery")
-#requireResource("com.plugin.search.ResultRender:ResultRender-resources")
+#requireResource("com.plugin.search.ResultRender:resultrender-resources")
 <html>
   <head>
-    <title>Search For Thumbnail</title>
+    <title>Search For Attachment</title>
     <meta name="decorator" content="atl.general">
     <meta name="application-base-url" content="$applicationProperties.getBaseUrl()">
+
   </head>
   <body>
     <form id="admin" class="aui" method="post" action="$applicationProperties.getBaseUrl()/plugins/servlet/searchresult">
@@ -23,13 +23,55 @@
     
     <div id="bodycontent" >
     
-    #foreach ($task in $searchresultcontainer)
-    <ul>
-    <li>$task.getDisplayTitle()</li>
-    <li>$task.getContent()</li>
-    </ul>
+    #foreach ($instance in $searchresultcontainer)
+#if ($instance.getAttachmentTypeString() == "Image")
+#set($searchResult = $instance.getSearchResult())
+#set($thumbNailItem = $instance.getThumbnailInfo())
+#set($thumbUrl = $thumbNailItem.getThumbnailUrlPath())
+#set($imgWidth = $thumbNailItem.getOriginalWidth())
+#set($imgHeight = $thumbNailItem.getOriginalHeight())
+#set($thumbHeight  = $thumbNailItem.getThumbnailHeight())
+#set($totalHeight = $thumbNailItem.getThumbnailHeight()+60)
+
+
+<div style="height: ${totalHeight}px; margin-left: 30px;">
+<h2 class="search-result-title"><a href="$applicationProperties.getBaseUrl()$searchResult.getExtraFields().get("containingContentUrlPath")" class="search-result-link">$searchResult.getExtraFields().get("containingContentDisplayTitle")
+</a></h2>
+    <span class="imageLinker">
+    <a href="$applicationProperties.getBaseUrl()$searchResult.getExtraFields().get("attachmentDownloadPath")" class="search-result-link visitable">
+    <img id="searchResultImage" class="imageThumbnailLink" src="$thumbUrl" border="0" align="bottom" height="$thumbHeight" alt="$searchResult.getDisplayTitle()" />
+    </a>  
+    <br />
+    <h7 class="search-result-title"><a href="$applicationProperties.getBaseUrl()$searchResult.getExtraFields().get("attachmentDownloadPath")" class="search-result-link visitable">$searchResult.getDisplayTitle()<span class="icon"></span><br>
+</a></h7>
+    </span>
+
+        
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#elseif ($instance.getAttachmentTypeString() == "Vedio")
+<br />
+
+#end
     #end
-    
+
     </div>
     
   </body>

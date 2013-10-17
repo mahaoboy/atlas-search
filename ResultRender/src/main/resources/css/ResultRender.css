@@ -1,0 +1,17 @@
+
+.imageLinker{
+   border: none;
+   text-decoration:none;
+  }
+  .imageThumbnailLink {
+    border:1px solid black;
+  }
+  
+  .search-result-link .visitable a {
+  	text-decoration:none;
+  	color: #000;
+  }
+  .search-result-link .visitable a:hover {
+  	text-decoration:none;
+  	color: #000;
+  }
